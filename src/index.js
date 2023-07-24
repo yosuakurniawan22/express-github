@@ -1,5 +1,6 @@
 import express from "express";
 import database from "./db/index.js";
+import routes from "./routes/index.js";
 
 const app = express();
 
@@ -17,6 +18,8 @@ database.sync()
 app.get('/', (req, res) => {
   res.json({ test: "Halo Express"});
 });
+
+app.use("/api", Object.values(routes));
 
 app.listen(3000, () => {
   console.log('Server jalan');
