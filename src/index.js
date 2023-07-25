@@ -18,6 +18,9 @@ database.sync()
 app.get('/', (req, res) => {
   res.json({ test: "Halo Express"});
 });
+app.get('/test', (req, res) => {
+  res.json({ test: "Halo Express"});
+});
 
 app.use("/api", Object.values(routes));
 
